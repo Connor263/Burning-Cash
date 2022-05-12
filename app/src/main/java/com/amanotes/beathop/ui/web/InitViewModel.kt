@@ -2,7 +2,6 @@ package com.amanotes.beathop.ui.web
 
 import android.content.Context
 import android.net.Uri
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.amanotes.beathop.data.model.web.Link
 import com.onesignal.OneSignal
@@ -18,7 +17,6 @@ class InitViewModel : ViewModel() {
     fun setGoogleID(googleId: String) {
         mainLink.googleId = googleId
         OneSignal.setExternalUserId(googleId)
-        Log.i("googleId", googleId)
     }
 
     fun setOrganic(organicAccess: Boolean) {
@@ -31,23 +29,19 @@ class InitViewModel : ViewModel() {
 
     fun setFBDeepLink(targetUri: Uri?) {
         mainLink.deepLink = targetUri?.toString()
-        Log.i("TAG", "setFBDeepLink -> deepLink: $targetUri")
 
         mainLink.deepLink?.let {
             val arrayDeepLink = it.split("//")
             mainLink.subAll = arrayDeepLink[1].split("_")
-            Log.i("TAG", "setFBDeepLink -> subAll: ${mainLink.subAll}")
         }
     }
 
     fun setAFUserID(id: String?) {
         mainLink.appsFlyerUserId = id
-        Log.i("setAFUserID", id.toString())
     }
 
 
     fun setAfStatus(value: String) {
-        Log.d("TAG", "afStatus value: $value")
         if (value == "Organic" && mainLink.deepLink == null) {
             mainLink.mediaSource = "organic"
         }

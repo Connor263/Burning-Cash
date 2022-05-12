@@ -1,8 +1,6 @@
 package com.amanotes.beathop.ui.web
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.amanotes.beathop.MainActivity
 import com.amanotes.beathop.R
 import com.amanotes.beathop.data.repo.LinkRepositoryImpl
 import com.amanotes.beathop.databinding.FragmentInitBinding
@@ -58,7 +55,6 @@ class InitFragment : Fragment() {
         binding.pBar.visibility = View.VISIBLE
         linkRepository = LinkRepositoryImpl(requireContext())
         val link = linkRepository.link
-        Log.i("TAG", "getCachedLink: $link")
 
         if (isInternetAvailable(requireContext())) {
             if (link != "") {
@@ -92,7 +88,6 @@ class InitFragment : Fragment() {
                 val action = InitFragmentDirections.actionGlobalMenuFragment()
                 findNavController().navigate(action)
             }
-            Log.d("TAG", "setupFirebaseKeys: url -> $url")
         }
     }
 
@@ -113,19 +108,15 @@ class InitFragment : Fragment() {
                 when (inform.key) {
                     "af_status" -> {
                         viewModel.setAfStatus(inform.value.toString())
-                        Log.i("TAG", "setAfParams -> af_status: ${inform.value}")
                     }
                     "campaign" -> {
                         viewModel.setCampaign(inform.value.toString())
-                        Log.i("TAG", "setAfParams -> campaign: ${inform.value}")
                     }
                     "media_source" -> {
                         viewModel.setMediaSource(inform.value.toString())
-                        Log.i("TAG", "setAfParams -> media_source: ${inform.value}")
                     }
                     "af_channel" -> {
                         viewModel.setAfChannel(inform.value.toString())
-                        Log.i("TAG", "setAfParams -> af_channel: ${inform.value}")
                     }
                 }
             }
@@ -133,7 +124,6 @@ class InitFragment : Fragment() {
             val mediaSource = pair.first
             val organicAccess = pair.second
 
-            Log.i("TAG", "CheckOrganic: \nMediaSource:$mediaSource \nOrganic Access:$organicAccess")
             if (mediaSource == "organic" && organicAccess == false) {
                 val action = InitFragmentDirections.actionGlobalMenuFragment()
                 findNavController().navigate(action)

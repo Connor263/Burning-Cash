@@ -1,7 +1,6 @@
 package com.amanotes.beathop.di
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.amanotes.beathop.R
 import com.appsflyer.AppsFlyerConversionListener
@@ -28,15 +27,11 @@ class MainApplication : Application() {
             }
         }
 
-        override fun onConversionDataFail(error: String?) {
-            Log.e("TAG", "onConversionDataFail: $error")
-        }
+        override fun onConversionDataFail(error: String?) {}
 
         override fun onAppOpenAttribution(p0: MutableMap<String, String>?) {}
 
-        override fun onAttributionFailure(error: String?) {
-            Log.e("TAG", "onAttributionFailure: $error")
-        }
+        override fun onAttributionFailure(error: String?) {}
     }
 
     companion object {
