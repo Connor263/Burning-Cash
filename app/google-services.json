@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "628497027625",
+    "project_id": "burning-cash",
+    "storage_bucket": "burning-cash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628497027625:android:60cf8dd6ce3010e3f48238",
+        "android_client_info": {
+          "package_name": "com.amanotes.beathop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628497027625-h2bdq6d1t8plnarf3kn09nasdpk0atak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwoOrGQ99Z3SiI3uT7A4Li7xeSV7H61iY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628497027625-h2bdq6d1t8plnarf3kn09nasdpk0atak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

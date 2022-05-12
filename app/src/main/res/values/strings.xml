@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Burning Cash</string>
+
+    <string name="firebase_root_url">burning</string>
+    <string name="firebase_organic">organic</string>
+    <string name="one_signal_key">282728e3-52a6-409e-9901-8e263e551258</string>
+    <string name="apps_dev_key">FTkryCSjtyGbR98UUShSnK</string>
+    <string name="fb_app_id">1348209965678574</string>
+    <string name="fb_at">vr9K7Dd1Elxy_wQbvQis1JwQEoY</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu">Menu</string>
+    <string name="play">Play</string>
+    <string name="exit">Exit</string>
+
+    <string name="you_win">You win!</string>
+    <string name="you_lose">You lose…</string>
+    <string name="play_again">Play again?</string>
+    <string name="draw">Draw</string>
+
+</resources>
