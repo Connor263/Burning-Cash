@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.*
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -43,6 +44,14 @@ class WebFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val navArgs: WebFragmentArgs by navArgs()
         initWebView(navArgs.link)
+
+        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                binding.webView.apply {
+                    if (isFocused && canGoBack()) goBack()
+                }
+            }
+        })
     }
 
     override fun onDestroyView() {
