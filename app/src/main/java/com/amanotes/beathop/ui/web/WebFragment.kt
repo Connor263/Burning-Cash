@@ -87,11 +87,16 @@ class WebFragment : Fragment() {
         }
         settings.apply {
             javaScriptEnabled = true
-            domStorageEnabled = true
             allowContentAccess = true
+            domStorageEnabled = true
+            javaScriptCanOpenWindowsAutomatically = true
+            setSupportMultipleWindows(false)
+            builtInZoomControls = true
+            useWideViewPort = true
+            setAppCacheEnabled(true)
+            displayZoomControls = false
             allowFileAccess = true
-            loadWithOverviewMode = true
-            cacheMode = WebSettings.LOAD_DEFAULT
+            lightTouchEnabled = true
         }
         CookieManager.getInstance().apply {
             setAcceptCookie(true)
